@@ -1,9 +1,17 @@
 import { test, expect } from "@playwright/test";
 
-// Source for waitForSelector: https://playwright.dev/docs/api/class-page
-// Source for timeout: https://playwright.dev/docs/test-timeouts and https://autify.com/blog/playwright-timeout
-// Source for first(): https://www.youtube.com/watch?v=B-1uNYVgUMA
-// Source for locator: https://playwright.dev/docs/api/class-locator
+/**
+ * Sources used in this file:
+ * - waitForSelector, locator, timeouts: Microsoft Playwright Documentation:
+ *   https://playwright.dev/docs/api/class-page
+ *   https://playwright.dev/docs/api/class-locator
+ *   https://playwright.dev/docs/test-timeouts
+ * - Timeout handling: Bravin Wasike, Autify Blog:
+ *   https://autify.com/blog/playwright-timeout
+ * - first(): Test Step, YouTube:
+ *   https://www.youtube.com/watch?v=B-1uNYVgUMA
+ * For full attribution details, see docs/SOURCES.md
+ */
 test("user can navigate to page with venue details", async ({ page }) => {
   await page.goto("/login");
   await page.getByRole("link", { name: "Home" }).click();
